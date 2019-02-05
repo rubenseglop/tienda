@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="tienda_clientes_action" name="CLIENTES"
+                    res_model="tienda.clientes"/>
+
+        <record id="tienda_clientes_view_tree" model="ir.ui.view">
+            <field name="name">Lista clientes</field>
+            <field name="model">tienda.clientes</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="direccion"/>
+                    <field name="poblacion"/>
+                    <field name="provincia"/>
+                    <field name="codPostal"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tienda_clientes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda clientes</field>
+            <field name="model">tienda.clientes</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="direccion"/>
+                    <field name="poblacion"/>
+                    <field name="provincia"/>
+                    <field name="codPostal"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Tienda" id="tienda_clientes" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="tienda_clientes" sequence="10"/>
+        <menuitem name="Clientes" id="clientes" action="tienda_clientes_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

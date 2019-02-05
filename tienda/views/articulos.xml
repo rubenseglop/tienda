@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="tienda_articulos_action" name="ARTICULOS"
+                    res_model="tienda.articulos"/>
+
+        <record id="tienda_articulos_view_tree" model="ir.ui.view">
+            <field name="name">Lista articulos</field>
+            <field name="model">tienda.articulos</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="cod"/>
+                    <field name="nombre"/>
+                    <field name="descripcion"/>
+                    <field name="proveedor"/>
+                    <field name="precio"/>
+                    <field name="cantidad"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tienda_articulos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda articulos</field>
+            <field name="model">tienda.articulos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod"/>
+                    <field name="nombre"/>
+                    <field name="descripcion"/>
+                    <field name="proveedor"/>
+                    <field name="precio"/>
+                    <field name="cantidad"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Tienda" id="tienda_articulos" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="tienda_articulos" sequence="10"/>
+        <menuitem name="Articulos" id="articulos" action="tienda_articulos_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

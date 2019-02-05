@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="tienda_ventas_action" name="VENTAS"
+                    res_model="tienda.ventas"/>
+
+        <record id="tienda_ventas_view_tree" model="ir.ui.view">
+            <field name="name">Lista ventas</field>
+            <field name="model">tienda.ventas</field>
+            <field name="arch" type="xml">
+
+
+
+                <tree>
+                    <field name="cliente"/>
+                    <field name="fecha_actual"/>
+                    <field name="articulo"/>
+                    <field name="cantidad"/>
+                    <field name="precio"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem name="Tienda" id="tienda_ventas" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="tienda_ventas" sequence="10"/>
+        <menuitem name="Ventas" id="ventas" action="tienda_ventas_action" parent="menu_inicio"
+                  sequence="10"/>
+
+
+    </data>
+</odoo>
